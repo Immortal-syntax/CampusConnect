@@ -9,7 +9,7 @@ This directory serves as the repository for visual captures of **CampusConnect A
 
 | Visual Asset | Target Viewport | Key Features to Highlight |
 | :--- | :---: | :--- |
-| `01-desktop-hero-overview.png` | Desktop (1920x1080) | - Header navigation & "Ask AI" button<br>- UN SDG 4 Announcement Banner<br>- Navy & Electric Blue SaaS aesthetic<br>- Value proposition & stat pills<br>- Interactive UI card preview |
+| `01-desktop-hero-overview.png` | Desktop (1920x1080) | - Header navigation & "Ask AI" button<br>- UN SDG Announcement Banner<br>- Navy & Electric Blue SaaS aesthetic<br>- Value proposition & stat pills<br>- Interactive UI card preview |
 | `02-features-grid.png` | Desktop (1440x900) | - 6 Modern feature cards with hover states<br>- Topic tags (Generative AI, Curriculum Support, etc.) |
 | `03-chatbot-intro-and-status.png` | Desktop (1440x900) | - Assistant overview & capabilities checklist<br>- "Open AI Chatbot" CTA<br>- Live status badge: `Botpress Webchat Connected & Live`<br>- Integration architecture spec card |
 | `04-student-support-categories.png` | Desktop (1440x900) | - 6 Collegiate advisory categories with topic tags<br>- Direct question trigger buttons |

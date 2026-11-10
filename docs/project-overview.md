@@ -11,7 +11,7 @@ CampusConnect AI is a modern student support platform designed to provide round-
 
 ---
 
-## Alignment with UN SDG 4: Quality Education
+## Alignment with UN SDG: Quality Education
 
 United Nations Sustainable Development Goal 4 aims to "ensure inclusive and equitable quality education and promote lifelong learning opportunities for all." Higher education institutions often struggle with fragmented administrative systems, leading to delayed academic advisory, unequal access to learning resources, and overwhelmed student support offices.
 

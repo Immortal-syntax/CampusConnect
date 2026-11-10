@@ -61,7 +61,7 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 - [x] Implement the Navy Blue, Electric Blue, and Crisp White aesthetic.
 - [x] Build semantic components:
   - Global Navigation with responsive mobile menu.
-  - Hero banner with UN SDG 4 recognition badge.
+  - Hero banner with UN SDG recognition badge.
   - Interactive Guidance Categories (Academics, Resources, Campus Life, Admissions, Exams, Career).
   - Quick Search & Filter mechanism in Vanilla JS.
   - Botpress Architecture & Integration Preview section.
