@@ -378,9 +378,9 @@
                   </svg>
                   <span>Open AI Chatbot</span>
                 </button>
-                <div class="connection-status-pill standby">
+                <div class="connection-status-pill standby" id="chatbotStatusPill">
                   <span class="status-indicator-dot"></span>
-                  <span><strong>Status:</strong> Botpress Webchat Unconnected (Staged for Bot ID)</span>
+                  <span><strong>Status:</strong> Connecting to Botpress Cloud...</span>
                 </div>
               </div>
             </div>
@@ -822,13 +822,13 @@
         <div class="status-alert-box">
           <div class="status-alert-header">
             <span class="status-dot standby"></span>
-            <strong>Botpress Cloud Integration: Staged & Ready</strong>
+            <strong>Botpress Cloud Assistant Status</strong>
           </div>
-          <p class="status-alert-text">
-            The frontend architecture, interactive hooks, and knowledge base schemas are fully configured.
+          <p class="status-alert-text" id="modalFallbackText">
+            The Botpress Webchat interface is currently connecting to your live cloud agent. If it does not appear within a few seconds, please check your network connection or ensure third-party scripts are allowed.
           </p>
           <div class="status-callout-info">
-            <strong>Genuine AI Notice:</strong> To ensure complete academic and factual integrity, this system does not display fake or simulated AI responses. The assistant will be powered by a live <strong>Botpress Cloud</strong> bot.
+            <strong>Live AI Integration:</strong> This platform is powered by an authentic <strong>Botpress Cloud</strong> Generative AI bot using Retrieval-Augmented Generation (RAG).
           </div>
         </div>
 
@@ -923,6 +923,10 @@
 
     </div>
   </footer>
+
+  <!-- Official Botpress Cloud Webchat Embed Bundle -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/11/10/16/20261110165048-XOMTS7I8.js" defer></script>
 
   <!-- Master JavaScript Engine -->
   <script src="assets/js/script.js"></script>

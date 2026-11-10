@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Active Botpress Cloud Webchat configuration extracted from the published agent.",
+  "botpress": {
+    "botId": "2133e1fa-1a4d-404a-9f96-6a988597b04f",
+    "clientId": "eacbce57-d261-419a-8f54-f8c85d2402a5",
+    "embedBundle": {
+      "injectScript": "https://cdn.botpress.cloud/webchat/v3.7/inject.js",
+      "configScript": "https://files.bpcontent.cloud/2026/11/10/16/20261110165048-XOMTS7I8.js"
+    },
+    "configuration": {
+      "version": "v2",
+      "botName": "CampusConnect AI",
+      "botAvatar": "https://files.bpcontent.cloud/2026/11/10/17/20261110171901-59GCURB8.svg",
+      "botDescription": "Your AI-powered student assistant",
+      "composerPlaceholder": "Ask me anything about learning...",
+      "color": "#3276EA",
+      "themeMode": "light",
+      "fontFamily": "inter"
+    }
+  }
+}

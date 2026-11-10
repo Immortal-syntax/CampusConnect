@@ -4,7 +4,22 @@
 
 **CampusConnect AI** leverages **Botpress Cloud** as its conversational Generative AI engine. Botpress handles Natural Language Understanding (NLU), Large Language Model (LLM) orchestration, and Knowledge Base vector retrieval (RAG).
 
-The frontend portal embeds the official **Botpress Webchat** library to provide an accessible, real-time chat interface.
+The frontend portal embeds the official **Botpress Webchat v3.7** library connected to the live published agent.
+
+---
+
+## Active Webchat Embed Configuration
+
+The live bot is integrated directly into `index.html` using the official Botpress embed snippet:
+
+```html
+<script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/11/10/16/20261110165048-XOMTS7I8.js" defer></script>
+```
+
+- **Bot ID:** `2133e1fa-1a4d-404a-9f96-6a988597b04f`
+- **Client ID:** `eacbce57-d261-419a-8f54-f8c85d2402a5`
+- **Active Config File:** [`botpress-config.json`](botpress-config.json)
 
 ---
 
@@ -16,44 +31,16 @@ This directory contains the complete specification and configuration materials n
 2. **[`agent-instructions.md`](agent-instructions.md):** Complete system instructions and personality prompt for the Autonomous Node, including anti-hallucination rules, clarification protocols, and verified resource references.
 3. **[`conversation-design.md`](conversation-design.md):** Architectural flows for greeting, academic assistance, examination preparation, timetable planning, resource recommendations, unknown-question fallback, and closing.
 4. **[`test-cases.md`](test-cases.md):** 28 comprehensive test cases covering normal questions, differently phrased/typo queries, ambiguous inquiries, institution-specific questions, and boundary-testing questions.
-5. **[`botpress-config-template.json`](botpress-config-template.json):** Configuration parameters template ready for your live `botId` and `clientId`.
+5. **[`botpress-config.json`](botpress-config.json):** Active configuration parameters matching the published live bot.
+6. **[`botpress-config-template.json`](botpress-config-template.json):** Reusable template for secondary environments.
 
 ---
 
-## Integration Architecture
+## Webchat JavaScript API Integration
 
-```
-+--------------------------------------------------------+
-|          CampusConnect AI Webpage (index.html)         |
-|  - Injects Botpress Webchat v2 bundle                  |
-|  - Injects assets/js/script.js initialization script   |
-+---------------------------+----------------------------+
-                            |
-                     (HTTPS / WSS)
-                            |
-                            v
-+--------------------------------------------------------+
-|                 Botpress Cloud Engine                  |
-|  - Autonomous Node (System Instructions)               |
-|  - Generative AI LLM Orchestrator                      |
-|  - Knowledge Base (Vector Ingestion from /knowledge-base)
-+--------------------------------------------------------+
-```
+CampusConnect AI's frontend interacts with the live Botpress Webchat via documented methods in `assets/js/script.js`:
 
----
-
-## Webchat Configuration Sample
-
-```json
-{
-  "botId": "YOUR_BOTPRESS_BOT_ID",
-  "configuration": {
-    "botName": "CampusConnect Assistant",
-    "botAvatar": "assets/images/logo.svg",
-    "botDescription": "Generative AI Student Assistance Hub",
-    "themeColor": "#0066FF"
-  }
-}
-```
-
-> **Security Reminder:** Never commit administrative API keys or personal access tokens to this repository. The Webchat integration only requires public client identifiers.
+- **Open Webchat:** `window.botpress.open()`
+- **Send Message:** `window.botpress.sendMessage(message)`
+- **Readiness Listener:** `window.botpress.on('webchat:ready', () => { ... })`
+- **Open/Close Listeners:** `window.botpress.on('webchat:opened', ...)` and `window.botpress.on('webchat:closed', ...)`

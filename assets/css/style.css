@@ -875,12 +875,23 @@ button:focus-visible {
   border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
+.connection-status-pill.ready {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
 .status-indicator-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--status-standby);
   box-shadow: 0 0 8px var(--status-standby);
+}
+
+.status-indicator-dot.ready {
+  background: var(--status-ready);
+  box-shadow: 0 0 8px var(--status-ready);
 }
 
 /* Chatbot Spec Terminal Card */
