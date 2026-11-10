@@ -83,3 +83,4 @@ Students who believe a final course grade was assigned based on arbitrary, capri
 ### 4.2 Sanctions & Disciplinary Records
 - **First Infraction:** Discretion of the instructor, ranging from a grade of zero on the specific assignment to an automatic **F** in the course, accompanied by an official reprimand on file with the Office of Academic Integrity.
 - **Repeat Infractions:** Referral to the University Honor Council, resulting in mandatory academic suspension (one to two semesters) or permanent expulsion with transcript notation.
+

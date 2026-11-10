@@ -84,3 +84,4 @@
 - **Facilities:** Multi-court gymnasium, 25-meter lap swimming pool, indoor rock climbing wall, Olympic lifting platforms, cardio mezzanine, and indoor running track.
 - **Access:** Included in tuition and fee schedule; activated automatically upon presenting a valid student ID card.
 - **Intramural Sports:** Seasonal recreational leagues (soccer, basketball, volleyball, flag football, badminton) open to all skill levels with no varsity eligibility required.
+

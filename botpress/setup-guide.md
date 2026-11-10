@@ -119,3 +119,4 @@ Before publishing, validate the assistant using the interactive **Emulator** on 
 5. In the upcoming website integration phase, you will paste these keys into `botpress/botpress-config-template.json` to activate the live chatbot in your web portal.
 
 > **Security Note:** Do NOT commit administrative API keys or personal access tokens to GitHub. The Webchat Bot ID and Client ID are public client identifiers intended for browser embedding.
+

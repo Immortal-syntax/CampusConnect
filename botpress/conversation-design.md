@@ -189,3 +189,4 @@ Remember: Consistent, spaced study and prioritizing your well-being make all the
 
 If you ever need study techniques, timetable advice, or learning resources, CampusConnect AI is here 24/7. Have a productive day!
 ```
+
