@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusConnect AI - Generative AI Powered Student Assistance Chatbot advancing UN SDG 4: Quality Education.">
+  <title>CampusConnect AI – Generative AI Student Assistance Hub</title>
+  
+  <!-- Favicon / Brand Logo -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar: UN SDG 4 & Stage 1 Status -->
+  <aside class="sdg-banner" aria-label="Project Status & SDG Alignment">
+    <div class="container sdg-banner-inner">
+      <div class="sdg-tag">
+        <span class="sdg-badge">UN SDG 4</span>
+        <span>Quality Education – Target 4.3 Higher Education Accessibility</span>
+      </div>
+      <div class="sdg-status">
+        <span class="pulse-dot"></span>
+        <span>Foundation Phase • Botpress Cloud Architecture Staged</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Header Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CampusConnect AI Home">
+        <img src="assets/images/logo.svg" alt="CampusConnect AI Logo" class="brand-icon">
+        <div class="brand-text">
+          <span class="brand-title">CampusConnect<span>AI</span></span>
+          <span class="brand-subtitle">Student Assistance Hub</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#overview" class="nav-link active">Overview</a></li>
+          <li><a href="#sdg-impact" class="nav-link">SDG 4 Impact</a></li>
+          <li><a href="#guidance" class="nav-link">Guidance Hub</a></li>
+          <li><a href="#architecture" class="nav-link">Architecture</a></li>
+          <li><a href="docs/project-overview.md" class="nav-link" target="_blank" rel="noopener">Documentation</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="nav-actions">
+        <button class="btn-primary" data-trigger="assistant-status" aria-haspopup="dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Ask AI Assistant</span>
+        </button>
+        
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="hero-glow-bg"></div>
+      <div class="container hero-grid">
+        
+        <!-- Left Hero Column -->
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <span>⚡ Generative AI for Higher Education</span>
+          </div>
+          <h1 class="hero-title">
+            Empowering Every Student with <span class="gradient-text">24/7 Academic Guidance</span>
+          </h1>
+          <p class="hero-desc">
+            CampusConnect AI bridges university administrative silos to provide instantaneous, reliable support for course selections, examination policies, campus wellness, and student resources.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#guidance" class="btn-primary">
+              <span>Explore Guidance Topics</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button class="btn-secondary" data-trigger="assistant-status">
+              <span>View Botpress Status</span>
+            </button>
+          </div>
+
+          <!-- Quick Metrics / Pillars -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>SDG 4</h4>
+              <p>Quality Education Mission</p>
+            </div>
+            <div class="stat-item">
+              <h4>24/7</h4>
+              <p>Real-time Assistance</p>
+            </div>
+            <div class="stat-item">
+              <h4>RAG</h4>
+              <p>Grounded Knowledge Base</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Column: Architecture & Readiness Card -->
+        <aside class="hero-preview-card" aria-label="Botpress Integration Status">
+          <div class="card-header-bar">
+            <div class="card-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="card-tag">STATUS: PHASE 1 READY</span>
+          </div>
+
+          <div class="preview-body">
+            <h3>Botpress Cloud Core</h3>
+            <p>
+              CampusConnect AI is structured for direct integration with Botpress Cloud Generative AI and RAG knowledge base vectors.
+            </p>
+
+            <ul class="integration-checklist">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Vanilla HTML5 & Modern CSS3 Portal Ready</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Knowledge Base Schema & Templates Staged</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Botpress Webchat Client Hooks Configured</span>
+              </li>
+              <li>
+                <span class="pending-icon">⏳</span>
+                <span>Live Botpress Cloud Bot ID Linking (Stage 2)</span>
+              </li>
+            </ul>
+
+            <div class="botpress-status-callout">
+              <strong>Integration Readiness:</strong> Clean separation of concerns. Ready to embed Botpress Webchat without server-side dependencies.
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- UN SDG 4 Impact Section -->
+    <section class="sdg-section" id="sdg-impact">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">United Nations SDG Alignment</span>
+          <h2 class="section-title">Championing SDG 4: Quality Education</h2>
+          <p class="section-desc">
+            How CampusConnect AI utilizes conversational artificial intelligence to eliminate institutional barriers and foster lifelong learning.
+          </p>
+        </div>
+
+        <div class="sdg-card-grid">
+          
+          <!-- SDG Flagship Banner -->
+          <div class="sdg-badge-showcase">
+            <div>
+              <div class="sdg-number">04</div>
+              <div class="sdg-title">Quality Education</div>
+            </div>
+            <div class="sdg-quote">
+              "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all."
+              <br><small>— United Nations Sustainable Development Goal 4</small>
+            </div>
+          </div>
+
+          <!-- Impact Breakdown Grid -->
+          <div class="sdg-impact-list">
+            
+            <article class="impact-card">
+              <div class="impact-icon">🌐</div>
+              <h4>Equitable Access (Target 4.3)</h4>
+              <p>Provides commuter, working, and first-generation learners round-the-clock guidance without office queues.</p>
+            </article>
+
+            <article class="impact-card">
+              <div class="impact-icon">💡</div>
+              <h4>Resource Democratization</h4>
+              <p>Directs students to open-access courseware, library databases, and peer tutoring networks instantly.</p>
+            </article>
+
+            <article class="impact-card">
+              <div class="impact-icon">⏱️</div>
+              <h4>Administrative Relief</h4>
+              <p>Offloads repetitive inquiries from advisors, allowing human counselors to focus on high-need student interventions.</p>
+            </article>
+
+            <article class="impact-card">
+              <div class="impact-icon">🛡️</div>
+              <h4>Accurate & Non-Hallucinatory</h4>
+              <p>Retrieval-Augmented Generation (RAG) ensures answers are anchored strictly in approved university policies.</p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Guidance Directory & Interactive Categories -->
+    <section class="guidance-section" id="guidance">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">Campus Guidance Directory</span>
+          <h2 class="section-title">Explore Student Advisory Areas</h2>
+          <p class="section-desc">
+            Structured knowledge categories indexed and ready for Botpress Cloud conversational retrieval.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-bar" role="tablist" aria-label="Filter Guidance Topics">
+          <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">All Topics</button>
+          <button class="filter-btn" data-category="academic" role="tab" aria-selected="false">Academic Advising</button>
+          <button class="filter-btn" data-category="resources" role="tab" aria-selected="false">Learning Resources</button>
+          <button class="filter-btn" data-category="services" role="tab" aria-selected="false">Campus Services</button>
+          <button class="filter-btn" data-category="exams" role="tab" aria-selected="false">Exams & Policies</button>
+        </div>
+
+        <!-- Guidance Cards Grid -->
+        <div class="guidance-grid">
+          
+          <!-- Card 1: Academic Advising -->
+          <article class="guidance-card" data-category="academic">
+            <div class="card-top">
+              <div class="card-icon-wrapper">📚</div>
+              <span class="card-badge">Core Academic</span>
+            </div>
+            <h3>Curriculum & Course Selection</h3>
+            <p>
+              Navigate prerequisite flowcharts, degree requirements, elective tracks, and credit overload policies.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">Degree Audit</li>
+              <li class="topic-tag">Prerequisites</li>
+              <li class="topic-tag">Add/Drop Deadlines</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>Consult AI Advisor</span>
+              <span>→</span>
+            </a>
+          </article>
+
+          <!-- Card 2: Learning Resources -->
+          <article class="guidance-card" data-category="resources">
+            <div class="card-top">
+              <div class="card-icon-wrapper">🔬</div>
+              <span class="card-badge">Research</span>
+            </div>
+            <h3>Library & Research Repositories</h3>
+            <p>
+              Find verified research journals, reserve quiet study carrels, and access STEM peer-tutoring centers.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">Digital Archives</li>
+              <li class="topic-tag">Peer Tutoring</li>
+              <li class="topic-tag">Study Commons</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>Explore Resources</span>
+              <span>→</span>
+            </a>
+          </article>
+
+          <!-- Card 3: Student Services -->
+          <article class="guidance-card" data-category="services">
+            <div class="card-top">
+              <div class="card-icon-wrapper">🏛️</div>
+              <span class="card-badge">Campus Life</span>
+            </div>
+            <h3>Health, Wellness & Housing</h3>
+            <p>
+              Access student counseling appointments, residential life assistance, health clinic services, and transit passes.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">Wellness Center</li>
+              <li class="topic-tag">Dormitory Info</li>
+              <li class="topic-tag">Emergency Desk</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>View Support</span>
+              <span>→</span>
+            </a>
+          </article>
+
+          <!-- Card 4: Financial Aid & Admissions -->
+          <article class="guidance-card" data-category="services">
+            <div class="card-top">
+              <div class="card-icon-wrapper">💳</div>
+              <span class="card-badge">Financial Support</span>
+            </div>
+            <h3>Scholarships & Financial Aid</h3>
+            <p>
+              Understand fee payment installments, institutional scholarship deadlines, and emergency relief funds.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">Merit Awards</li>
+              <li class="topic-tag">Tuition Deadlines</li>
+              <li class="topic-tag">Emergency Grants</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>Check Aid Deadlines</span>
+              <span>→</span>
+            </a>
+          </article>
+
+          <!-- Card 5: Examinations & Rules -->
+          <article class="guidance-card" data-category="exams">
+            <div class="card-top">
+              <div class="card-icon-wrapper">📝</div>
+              <span class="card-badge">Regulations</span>
+            </div>
+            <h3>Examinations & Grading Systems</h3>
+            <p>
+              Review GPA calculations, grade appeals, mid-term testing protocols, and Dean's Honor Roll benchmarks.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">GPA Criteria</li>
+              <li class="topic-tag">Grade Appeals</li>
+              <li class="topic-tag">Make-up Exams</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>Review Regulations</span>
+              <span>→</span>
+            </a>
+          </article>
+
+          <!-- Card 6: Career & Internships -->
+          <article class="guidance-card" data-category="academic">
+            <div class="card-top">
+              <div class="card-icon-wrapper">💼</div>
+              <span class="card-badge">Professional Growth</span>
+            </div>
+            <h3>Career Services & Placement</h3>
+            <p>
+              Connect with campus recruitment drives, resume enhancement workshops, and co-op internship advisement.
+            </p>
+            <ul class="card-topics">
+              <li class="topic-tag">Resume Reviews</li>
+              <li class="topic-tag">Campus Job Fairs</li>
+              <li class="topic-tag">Co-op Credits</li>
+            </ul>
+            <a class="card-action-link" data-trigger="assistant-status">
+              <span>Explore Careers</span>
+              <span>→</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Architecture & Flow Section -->
+    <section class="architecture-section" id="architecture">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">System Architecture</span>
+          <h2 class="section-title">Generative AI Powered Architecture</h2>
+          <p class="section-desc">
+            How CampusConnect AI routes student inquiries through Botpress Cloud RAG to deliver accurate, policy-grounded answers.
+          </p>
+        </div>
+
+        <div class="arch-flow-grid">
+          
+          <div class="arch-step-card">
+            <div class="step-number">01</div>
+            <h4>Student Inquiry</h4>
+            <p>The student opens the webchat interface from any browser and enters a natural language query.</p>
+          </div>
+
+          <div class="arch-step-card">
+            <div class="step-number">02</div>
+            <h4>Botpress Webchat</h4>
+            <p>The embed script securely transmits the message session to Botpress Cloud via encrypted WebSocket / HTTPS.</p>
+          </div>
+
+          <div class="arch-step-card">
+            <div class="step-number">03</div>
+            <h4>RAG & Knowledge Base</h4>
+            <p>Botpress vector engine searches the ingested campus policy documents for the most relevant context chunks.</p>
+          </div>
+
+          <div class="arch-step-card">
+            <div class="step-number">04</div>
+            <h4>Generative Synthesis</h4>
+            <p>The LLM synthesizes an empathetic, factual answer citing official guidelines with zero hallucination.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Botpress Live Assistant Hook Container -->
+    <section class="assistant-hook-section">
+      <div class="container">
+        <div class="assistant-hook-box">
+          <div class="hook-content">
+            <h3>Ready for Botpress Cloud Integration</h3>
+            <p>
+              The frontend is engineered with zero dependency overhead. Once your Botpress Bot ID is connected, full generative conversation becomes immediately active.
+            </p>
+            <button class="btn-primary" data-trigger="assistant-status">
+              <span>Check Integration Specs</span>
+            </button>
+          </div>
+          <div class="hook-terminal">
+            <div class="terminal-line success">✓ [OK] HTML5 Semantic DOM ready</div>
+            <div class="terminal-line success">✓ [OK] Navy & Electric Blue CSS3 ready</div>
+            <div class="terminal-line success">✓ [OK] Knowledge Base templates staged</div>
+            <div class="terminal-line info">ℹ [INFO] Botpress Webchat Hook: window.initBotpressWebchat()</div>
+            <div class="terminal-line">→ [NEXT] Stage 2: Bind Bot ID & Deploy Botpress Webchat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Assistant Trigger (Fixed Corner) -->
+  <button class="floating-assistant-trigger" data-trigger="assistant-status" aria-label="Open AI Assistant Dialog">
+    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span>CampusConnect AI</span>
+  </button>
+
+  <!-- Modal / Notification Dialog for Stage 1 -->
+  <div class="notice-modal-overlay" id="noticeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="notice-modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">CampusConnect AI Assistant</h3>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>Current Stage: Foundation & Architecture Setup (Stage 1)</strong>
+        </p>
+        <p>
+          The web portal and integration hooks are fully implemented. To uphold genuine AI integrity, no fake or mock chat responses are simulated.
+        </p>
+        <div class="modal-callout">
+          <strong>Next Step (Stage 2):</strong> Provide your Botpress Cloud Bot ID in <code>botpress/botpress-config-template.json</code> to activate live Generative AI chat!
+        </div>
+        <button class="btn-primary" id="modalAcknowledgeBtn" style="width: 100%;">
+          <span>Understood</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
+            <span class="brand-title" style="color:#FFF;">CampusConnect<span>AI</span></span>
+          </div>
+          <p class="footer-desc">
+            An open, accessible student guidance platform advancing United Nations Sustainable Development Goal 4 (Quality Education) through real Generative AI.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#sdg-impact">SDG 4 Impact</a></li>
+            <li><a href="#guidance">Guidance Hub</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="docs/project-overview.md" target="_blank">Project Overview</a></li>
+            <li><a href="docs/requirements-specification.md" target="_blank">Requirements Spec</a></li>
+            <li><a href="docs/development-roadmap.md" target="_blank">Development Roadmap</a></li>
+            <li><a href="botpress/README.md" target="_blank">Botpress Setup Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Compliance</h4>
+          <ul class="footer-links">
+            <li><a href="LICENSE" target="_blank">MIT License</a></li>
+            <li><a href="knowledge-base/README.md" target="_blank">Knowledge Base</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener">UN SDG 4 Details</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CampusConnect AI Project Contributors. Released under the MIT License.</p>
+        <p>Built with HTML5, CSS3, Vanilla JS & Botpress Cloud.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Master JavaScript Engine -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

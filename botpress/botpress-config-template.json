@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Configuration template for Botpress Cloud Webchat integration. Replace placeholders with actual credentials from your Botpress Cloud dashboard.",
+  "botpress": {
+    "botId": "YOUR_BOTPRESS_BOT_ID_HERE",
+    "clientId": "YOUR_BOTPRESS_CLIENT_ID_HERE",
+    "hostUrl": "https://cdn.botpress.cloud/webchat/v2",
+    "messagingUrl": "https://messaging.botpress.cloud",
+    "theme": {
+      "primaryColor": "#0066FF",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "botName": "CampusConnect AI",
+      "botDescription": "Generative AI Student Assistance Chatbot",
+      "avatarUrl": "assets/images/logo.svg"
+    }
+  }
+}
