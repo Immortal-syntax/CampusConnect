@@ -2,18 +2,24 @@
 
 [![UN SDG: Quality Education](https://img.shields.io/badge/UN%20SDG-Quality%20Education-C5192D.svg)](https://sdgs.un.org/goals/goal4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20Deployment-000000.svg?logo=vercel)](https://campus-connect-kohl-alpha.vercel.app/)
 [![Stack: HTML5 / CSS3 / Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-0066FF.svg)](assets/)
 [![AI Engine: Botpress Cloud](https://img.shields.io/badge/AI%20Engine-Botpress%20Cloud-38BDF8.svg)](https://botpress.com/)
 [![Webchat: Connected](https://img.shields.io/badge/Webchat-Live%20Agent%20Connected-10B981.svg)](botpress/)
+[![Vercel: Analytics & Speed Insights](https://img.shields.io/badge/Vercel-Analytics%20%26%20Speed%20Insights-10B981.svg?logo=vercel)](https://campus-connect-kohl-alpha.vercel.app/)
 
 > **CampusConnect AI** is a modern student assistance platform engineered to provide 24/7 academic guidance, learning resource recommendations, and student support. Built strictly with standard web technologies and integrated with an authentic **Botpress Cloud** Generative AI agent, it empowers collegiate learners while directly advancing **United Nations Sustainable Development Goal 4 (Quality Education)**.
+>
+> 🚀 **Live Production Deployment:** [CampusConnect AI – Generative AI Student Assistance Hub](https://campus-connect-kohl-alpha.vercel.app/)
 
 ---
 
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Live Deployment](#live-deployment)
 - [UN SDG Alignment](#un-sdg-alignment)
 - [Technology Stack](#technology-stack)
+- [Vercel Performance & Analytics](#vercel-performance--analytics)
 - [Project Structure](#project-structure)
 - [Design Direction](#design-direction)
 - [Botpress Cloud Integration & Live Agent](#botpress-cloud-integration--live-agent)
@@ -33,6 +39,20 @@ Higher education administrative systems are frequently fragmented across dispara
 1. **A Centralized Web Portal:** A fast, responsive, dependency-free frontend organized around 6 core student guidance pillars, an accessible search filter, and interactive prompt cards.
 2. **Generative AI Chatbot (Botpress Cloud):** An authentic conversational agent backed by Retrieval-Augmented Generation (RAG) that answers questions grounded strictly in official university guidelines and learning science.
 3. **Structured Knowledge Base Repository:** Standardized markdown documents designed for seamless vector ingestion into Botpress Cloud.
+4. **Real-User Performance Telemetry:** Continuous Core Web Vitals monitoring and anonymized traffic analytics powered by Vercel Speed Insights and Web Analytics.
+
+---
+
+## Live Deployment
+
+The latest production release of CampusConnect AI is hosted on Vercel's Edge Network:
+
+🔗 **[CampusConnect AI – Generative AI Student Assistance Hub](https://campus-connect-kohl-alpha.vercel.app/)**
+
+- **Hosting Provider:** Vercel Global Edge Network
+- **Status:** Active & Operational (HTTP 200)
+- **SSL / TLS:** Encrypted HTTPS
+- **Integrated Capabilities:** Botpress Cloud Webchat v3.7, Vercel Web Analytics, Vercel Speed Insights
 
 ---
 
@@ -54,9 +74,28 @@ To ensure maximum performance, zero build complexity, and long-term maintainabil
 - **Scripting:** Vanilla JavaScript (ES6+, zero frameworks, zero external libraries)
 - **AI Chatbot Engine:** Botpress Cloud (NLU, Autonomous Node, RAG vector database)
 - **Frontend Integration:** Botpress Webchat v3.7 official embed bundle
+- **Performance & Observability:** Vercel Speed Insights (`@vercel/speed-insights`) & Vercel Web Analytics (`@vercel/analytics`)
+- **Hosting Platform:** Vercel Edge Network
 - **Version Control:** Git & GitHub
 
-> **Architecture Principle:** No React, Next.js, Node.js, Python/Flask/Django backends, or SQL databases are introduced into the frontend client repository. The application runs natively in any standard web browser.
+> **Architecture Principle:** The application remains 100% lightweight and framework-agnostic. Vercel Web Analytics and Speed Insights collect telemetry directly at edge runtime without requiring React, Next.js, or complex client-side build pipelines.
+
+---
+
+## Vercel Performance & Analytics
+
+To ensure compliance with university accessibility standards, real-user performance data and telemetry are tracked using Vercel's official observability packages:
+
+| Capability | Package / Endpoint | Metrics Tracked |
+| :--- | :--- | :--- |
+| **Vercel Speed Insights** | `@vercel/speed-insights`<br>`/_vercel/speed-insights/script.js` | Core Web Vitals: Largest Contentful Paint (LCP), Interaction to Next Paint (INP), Cumulative Layout Shift (CLS), First Input Delay (FID), Time to First Byte (TTFB). |
+| **Vercel Web Analytics** | `@vercel/analytics`<br>`/_vercel/insights/script.js` | Real-time page views, unique visitors, geographic distribution, operating system, browser, and navigation paths. |
+
+### Activation Steps on Vercel Dashboard
+1. Open your project on the [Vercel Dashboard](https://vercel.com/dashboard).
+2. Navigate to the **Analytics** tab and click **Enable**.
+3. Navigate to the **Speed Insights** tab and click **Enable**.
+4. Deploy/redeploy the project — data will automatically populate in real-time as users visit [https://campus-connect-kohl-alpha.vercel.app/](https://campus-connect-kohl-alpha.vercel.app/).
 
 ---
 

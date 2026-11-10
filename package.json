@@ -1,0 +1,13 @@
+{
+  "name": "campusconnect-ai",
+  "version": "1.0.0",
+  "description": "CampusConnect AI - Generative AI Powered Student Assistance Chatbot advancing UN SDG (Quality Education)",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Zero tests required for static assets\" && exit 0"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.1.0"
+  }
+}
