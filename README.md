@@ -1,6 +1,6 @@
 # CampusConnect AI – Generative AI Powered Student Assistance Chatbot
 
-[![UN SDG 4: Quality Education](https://img.shields.io/badge/UN%20SDG-4%20Quality%20Education-C5192D.svg)](https://sdgs.un.org/goals/goal4)
+[![UN SDG: Quality Education](https://img.shields.io/badge/UN%20SDG-Quality%20Education-C5192D.svg)](https://sdgs.un.org/goals/goal4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Stack: HTML5 / CSS3 / Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-0066FF.svg)](assets/)
 [![AI Engine: Botpress Cloud](https://img.shields.io/badge/AI%20Engine-Botpress%20Cloud-38BDF8.svg)](https://botpress.com/)
@@ -12,7 +12,7 @@
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [UN SDG 4 Alignment](#un-sdg-4-alignment)
+- [UN SDG Alignment](#un-sdg-alignment)
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Design Direction](#design-direction)
@@ -36,7 +36,7 @@ Higher education administrative systems are frequently fragmented across dispara
 
 ---
 
-## UN SDG 4 Alignment
+## UN SDG Alignment
 
 This project is built under the framework of **United Nations Sustainable Development Goal 4: Quality Education**:
 - **Target 4.3 (Equal Access to Higher Education):** Provides continuous, 24/7 guidance to non-traditional, commuter, and working students who cannot attend standard on-campus advising hours.

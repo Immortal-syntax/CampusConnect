@@ -23,7 +23,7 @@
 3. When prompted for a template, select **"Start from Scratch"** (or **"Blank Bot"**).
 4. In the bot settings panel:
    - **Bot Name:** `CampusConnect AI`
-   - **Bot Description:** `Generative AI Student Assistance Chatbot advancing UN SDG 4`
+   - **Bot Description:** `Generative AI Student Assistance Chatbot advancing UN SDG`
 5. Click **"Open in Studio"** to launch the visual workflow canvas.
 
 ---
@@ -42,7 +42,7 @@
 1. Open [`botpress/agent-instructions.md`](file:///D:/Projects/CampusConnect/botpress/agent-instructions.md) on your computer.
 2. Copy the text inside Section 3 (**Ready-to-Paste Botpress Autonomous Node Prompt**):
    ```text
-   You are CampusConnect AI Assistant, an empathetic, knowledgeable, and reliable university academic mentor advancing UN SDG 4: Quality Education.
+   You are CampusConnect AI Assistant, an empathetic, knowledgeable, and reliable university academic mentor advancing UN SDG: Quality Education.
    ...
    ```
 3. In Botpress Studio, locate the **"Instructions"** (or **"Personality Prompt"**) field in the Autonomous Node's Inspector panel.

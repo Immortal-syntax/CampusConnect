@@ -168,7 +168,7 @@ Divide a standard notebook page into three sections:
 
 ## 6. Verified Educational & Learning Platforms
 
-Students should leverage high-quality, verified open-access educational platforms that advance UN SDG 4:
+Students should leverage high-quality, verified open-access educational platforms that advance UN SDG:
 
 ### 6.1 National & International Open Courseware
 - **SWAYAM (Study Webs of Active-Learning for Young Aspiring Minds):**
