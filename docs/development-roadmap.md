@@ -32,7 +32,7 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
                                      |
                                      v
 +--------------------------------------------------------------------------+
-|  Phase 5: Quality Assurance, Verification & Deployment (CURRENT)         |
+|  Phase 5: Quality Assurance, Verification & Deployment (COMPLETED)       |
 |  - WCAG audit, performance benchmarks, GitHub Pages deployment           |
 +--------------------------------------------------------------------------+
 ```
@@ -90,10 +90,10 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 - [x] Prevented duplicate floating widgets by hiding custom button upon Botpress mount.
 - [x] Executed live API test sessions against hosted agent (`clientId: YOUR_BOTPRESS_CLIENT_ID`).
 
-### Phase 5: QA, Verification & Final Deployment (CURRENT)
+### Phase 5: QA, Verification & Final Deployment (COMPLETED)
 - [x] Verify HTTP 200 responses on all static assets without 404s.
 - [x] JavaScript syntax validation (`node -c assets/js/script.js` passing with 0 errors).
 - [x] Accessibility audit against WCAG 2.1 AA standards (contrast, focus outlines, ARIA attributes).
 - [x] Multi-viewport layout testing (Desktop 1920px/1280px, Tablet 768px, Mobile 360px–480px).
-- [ ] Create GitHub Pages deployment instructions in documentation.
-- [ ] Final project summary and submission report.
+- [x] Create GitHub Pages deployment instructions in documentation (`README.md`).
+- [x] Final project summary and viva voce presentation guide (`docs/viva-presentation-guide.md`).
