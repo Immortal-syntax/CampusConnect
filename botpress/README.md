@@ -1,10 +1,22 @@
-# Botpress Cloud Integration Guide
+# Botpress Cloud Integration & Documentation Suite
 
 ## Overview
 
-**CampusConnect AI** leverages **Botpress Cloud** as its conversational Generative AI engine. Botpress handles the Natural Language Understanding (NLU), Large Language Model (LLM) orchestration, and Knowledge Base vector retrieval (RAG).
+**CampusConnect AI** leverages **Botpress Cloud** as its conversational Generative AI engine. Botpress handles Natural Language Understanding (NLU), Large Language Model (LLM) orchestration, and Knowledge Base vector retrieval (RAG).
 
-The frontend portal embeds the official **Botpress Webchat** library to provide a real-time chat interface.
+The frontend portal embeds the official **Botpress Webchat** library to provide an accessible, real-time chat interface.
+
+---
+
+## Suite of Botpress Configuration Documents
+
+This directory contains the complete specification and configuration materials needed to set up and deploy the Botpress AI assistant:
+
+1. **[`setup-guide.md`](setup-guide.md):** Complete step-by-step instructions for creating the bot in Botpress Cloud, configuring the Autonomous Node, uploading the knowledge base, testing in the emulator, publishing, and retrieving Webchat credentials.
+2. **[`agent-instructions.md`](agent-instructions.md):** Complete system instructions and personality prompt for the Autonomous Node, including anti-hallucination rules, clarification protocols, and verified resource references.
+3. **[`conversation-design.md`](conversation-design.md):** Architectural flows for greeting, academic assistance, examination preparation, timetable planning, resource recommendations, unknown-question fallback, and closing.
+4. **[`test-cases.md`](test-cases.md):** 28 comprehensive test cases covering normal questions, differently phrased/typo queries, ambiguous inquiries, institution-specific questions, and boundary-testing questions.
+5. **[`botpress-config-template.json`](botpress-config-template.json):** Configuration parameters template ready for your live `botId` and `clientId`.
 
 ---
 
@@ -22,33 +34,11 @@ The frontend portal embeds the official **Botpress Webchat** library to provide 
                             v
 +--------------------------------------------------------+
 |                 Botpress Cloud Engine                  |
-|  - Bot ID / Client ID Authentication                   |
-|  - Generative AI Orchestrator                          |
+|  - Autonomous Node (System Instructions)               |
+|  - Generative AI LLM Orchestrator                      |
 |  - Knowledge Base (Vector Ingestion from /knowledge-base)
 +--------------------------------------------------------+
 ```
-
----
-
-## Setup Steps (For Integration Stage)
-
-1. **Create a Botpress Cloud Account:**  
-   Sign in to [Botpress Cloud](https://cloud.botpress.com/) and create a new bot workspace named `CampusConnect-AI`.
-
-2. **Upload Knowledge Base Assets:**  
-   Upload the documents in `knowledge-base/` to the Botpress Knowledge Base panel.
-
-3. **Configure Bot Persona & Prompt:**  
-   Set the bot instructions to act as a courteous, accurate, and supportive university advisor.
-
-4. **Retrieve Integration Credentials:**  
-   From the Botpress Admin panel under **Integrations > Webchat**, note:
-   - `botId`: Unique identifier for your bot.
-   - `clientId`: Webchat client key.
-   - `hostUrl`: Typically `https://cdn.botpress.cloud/webchat/v2`.
-
-5. **Link into Frontend Portal:**  
-   In `index.html` and `assets/js/script.js`, provide the config variables to the initialization hook `initBotpressWebchat()`.
 
 ---
 
@@ -67,4 +57,3 @@ The frontend portal embeds the official **Botpress Webchat** library to provide 
 ```
 
 > **Security Reminder:** Never commit administrative API keys or personal access tokens to this repository. The Webchat integration only requires public client identifiers.
-
