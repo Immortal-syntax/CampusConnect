@@ -38,3 +38,4 @@
 
 ### Dean's Honor List
 - Awarded each semester to undergraduate students completing at least 12 graded credit hours with a term GPA of 3.75 or above.
+

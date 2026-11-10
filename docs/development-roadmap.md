@@ -90,3 +90,4 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 - [ ] Accessibility review against WCAG 2.1 AA standards.
 - [ ] Deploy live site via GitHub Pages or chosen static web host.
 - [ ] Populate `screenshots/` directory with interface walkthrough visuals.
+

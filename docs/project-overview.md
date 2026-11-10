@@ -83,3 +83,4 @@ CampusConnect AI provides a unified, user-friendly portal coupled with an intell
 - **Factual Integrity:** The conversational AI is grounded purely in institutional knowledge base assets to prevent fictitious outputs.
 - **Privacy & Security:** No student personal identifiers or confidential academic records are captured or transmitted by the static client.
 - **Accessibility:** High contrast compliance, semantic markup, and full responsiveness across mobile, tablet, and desktop screens.
+

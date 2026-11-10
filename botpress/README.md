@@ -67,3 +67,4 @@ The frontend portal embeds the official **Botpress Webchat** library to provide 
 ```
 
 > **Security Reminder:** Never commit administrative API keys or personal access tokens to this repository. The Webchat integration only requires public client identifiers.
+

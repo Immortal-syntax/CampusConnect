@@ -77,3 +77,4 @@ The application serves as a central hub for higher education learners to access 
 2. **Offline Rendering:** `index.html` loads locally in any modern web browser without server daemon requirements.
 3. **Botpress Readiness:** Webchat scripts and configuration templates are staged for live bot key binding.
 4. **Code Quality:** Zero lint errors, zero missing stylesheets or broken asset links.
+

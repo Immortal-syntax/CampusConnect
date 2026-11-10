@@ -28,3 +28,4 @@ To ensure optimal vectorization and retrieval accuracy in Botpress Cloud:
 3. **Question-and-Answer Pairs:** For FAQs, formulate questions matching how students typically inquire (e.g., *"How do I register for elective courses?"*).
 4. **Avoid Speculative or Outdated Dates:** Use relative guidance or explicit academic year flags (e.g., `Academic Year 2026-2027`).
 5. **No Invented Data:** Fill templates with generalized institutional guidelines or your specific university handbook data.
+

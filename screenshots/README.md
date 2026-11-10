@@ -8,3 +8,4 @@ This directory stores UI screenshots, mockups, and interaction captures of **Cam
 2. `guidance-cards.png`: Grid of student support and academic advisory cards with category filtering.
 3. `botpress-webchat-preview.png`: Botpress Webchat dialog window open with active generative conversation.
 4. `mobile-responsive-view.png`: Mobile viewport capture highlighting accessible layout on small screens.
+

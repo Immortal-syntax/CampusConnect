@@ -33,3 +33,4 @@ The priority application window for institutional merit and need-based scholarsh
 
 ### How do emergency financial relief grants work?
 Enrolled students facing unexpected emergencies (medical expense, temporary housing crisis) can apply for emergency relief grants through the Office of Student Affairs.
+
