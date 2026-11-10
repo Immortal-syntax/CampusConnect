@@ -340,7 +340,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 7. Backward Compatibility / Global Helper Hook ---
+  // --- 7. Support Topic Live Search Form ---
+  const topicSearchInput = document.getElementById('topicSearchInput');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+  const searchFeedback = document.getElementById('searchFeedback');
+  const categoryCards = document.querySelectorAll('.category-card');
+  const supportSearchForm = document.getElementById('supportSearchForm');
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>'"]/g, (tag) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag));
+  }
+
+  if (topicSearchInput) {
+    function filterTopics(query) {
+      const q = query.trim().toLowerCase();
+      let matchCount = 0;
+
+      if (!q) {
+        if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+        if (searchFeedback) searchFeedback.textContent = '';
+        categoryCards.forEach((c) => {
+          c.style.display = 'flex';
+        });
+        return;
+      }
+
+      if (clearSearchBtn) clearSearchBtn.style.display = 'block';
+
+      categoryCards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'flex';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (searchFeedback) {
+        if (matchCount === 0) {
+          searchFeedback.innerHTML = `No support topics match "<strong>${escapeHtml(q)}</strong>". Press Enter to ask this directly to the AI Assistant!`;
+        } else {
+          searchFeedback.textContent = `Showing ${matchCount} matching support area${matchCount > 1 ? 's' : ''}`;
+        }
+      }
+    }
+
+    topicSearchInput.addEventListener('input', (e) => {
+      filterTopics(e.target.value);
+    });
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        topicSearchInput.value = '';
+        filterTopics('');
+        topicSearchInput.focus();
+      });
+    }
+
+    if (supportSearchForm) {
+      supportSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = topicSearchInput.value.trim();
+        if (q) {
+          console.log(`[CampusConnect AI] Dispatching search term to Botpress: "${q}"`);
+          dispatchMessageToBotpress(q);
+        }
+      });
+    }
+  }
+
+  // --- 8. Backward Compatibility / Global Helper Hook ---
   window.initBotpressWebchat = function (config) {
     console.log('[CampusConnect AI] initBotpressWebchat hook called. Webchat bundle is embedded in index.html.');
     if (window.botpress && typeof window.botpress.open === 'function') {

@@ -411,7 +411,7 @@
                   <p class="spec-note">
                     <strong>Integrity Notice:</strong> In compliance with academic standards, no simulated or fake responses are shown. Live conversation activates upon connecting your genuine Botpress bot credentials.
                   </p>
-                  <a href="botpress/README.md" target="_blank" class="spec-link">
+                  <a href="botpress/README.md" target="_blank" rel="noopener noreferrer" class="spec-link">
                     <span>View Botpress Setup Guide</span>
                     <span>→</span>
                   </a>
@@ -436,6 +436,19 @@
             Organized information pillars covering every essential dimension of college life and academic success.
           </p>
         </div>
+
+        <!-- Interactive Support Topic Search Form -->
+        <form class="support-search-form" id="supportSearchForm" role="search" aria-label="Search student guidance topics">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="topicSearchInput" class="search-input" placeholder="Search guidance topics (e.g. exams, timetable, study methods, library, scholarships)..." aria-label="Filter guidance categories">
+            <button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear topic search" style="display: none;">&times;</button>
+          </div>
+          <div class="search-feedback" id="searchFeedback" aria-live="polite"></div>
+        </form>
 
         <div class="categories-grid">
           
@@ -674,13 +687,25 @@
         <div class="resources-grid">
           
           <div class="resource-item-card">
+            <div class="resource-icon">🎓</div>
+            <div class="resource-content">
+              <h4>Student Academic & Learning Guide</h4>
+              <p>Primary 10-category student guide: Active recall, spaced repetition, timetables, and verified platforms (SWAYAM, NPTEL).</p>
+              <div class="resource-meta">
+                <span class="meta-tag">Student Guide</span>
+                <a href="knowledge-base/campusconnect-student-guide.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Guide →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="resource-item-card">
             <div class="resource-icon">📄</div>
             <div class="resource-content">
               <h4>Academic Policies & Degree Regulations</h4>
               <p>Undergraduate credit limits, GPA calculations, course withdrawal policies, and graduation requirements.</p>
               <div class="resource-meta">
-                <span class="meta-tag">Markdown</span>
-                <a href="knowledge-base/academic-policies.md" target="_blank" class="resource-link">View Document →</a>
+                <span class="meta-tag">Regulations</span>
+                <a href="knowledge-base/academic-policies.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Document →</a>
               </div>
             </div>
           </div>
@@ -691,8 +716,32 @@
               <h4>Library & Digital Learning Resources</h4>
               <p>Borrowing privileges, interlibrary loans, STEM tutoring desk, and 24/7 quiet study commons access rules.</p>
               <div class="resource-meta">
-                <span class="meta-tag">Markdown</span>
-                <a href="knowledge-base/library-and-learning-resources.md" target="_blank" class="resource-link">View Document →</a>
+                <span class="meta-tag">Resources</span>
+                <a href="knowledge-base/library-and-learning-resources.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Document →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="resource-item-card">
+            <div class="resource-icon">📝</div>
+            <div class="resource-content">
+              <h4>Examination & Grading Rules</h4>
+              <p>Exam scheduling matrix, conflict rescheduling policies, 4.00 quality point scale, and academic integrity code.</p>
+              <div class="resource-meta">
+                <span class="meta-tag">Policies</span>
+                <a href="knowledge-base/examination-and-grading-rules.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Document →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="resource-item-card">
+            <div class="resource-icon">🏛️</div>
+            <div class="resource-content">
+              <h4>Student Services & Campus Life</h4>
+              <p>Health clinic, counseling (CAPS), housing & dining, campus transit shuttles, and student organizations.</p>
+              <div class="resource-meta">
+                <span class="meta-tag">Campus Life</span>
+                <a href="knowledge-base/student-services-and-campus-life.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Document →</a>
               </div>
             </div>
           </div>
@@ -700,23 +749,11 @@
           <div class="resource-item-card">
             <div class="resource-icon">⚙️</div>
             <div class="resource-content">
-              <h4>Botpress Integration & Webchat Guide</h4>
-              <p>Technical architecture, embed instructions, and configuration parameters for Botpress Cloud.</p>
+              <h4>Botpress Integration & Setup Guide</h4>
+              <p>Technical architecture, embed instructions, system prompt specifications, and configuration parameters.</p>
               <div class="resource-meta">
-                <span class="meta-tag">Guide</span>
-                <a href="botpress/README.md" target="_blank" class="resource-link">View Guide →</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="resource-item-card">
-            <div class="resource-icon">📋</div>
-            <div class="resource-content">
-              <h4>Requirements & Feature Specification</h4>
-              <p>Functional requirements, WCAG 2.1 AA accessibility guidelines, and system constraints.</p>
-              <div class="resource-meta">
-                <span class="meta-tag">Specification</span>
-                <a href="docs/requirements-specification.md" target="_blank" class="resource-link">View Specification →</a>
+                <span class="meta-tag">Architecture</span>
+                <a href="botpress/README.md" target="_blank" rel="noopener noreferrer" class="resource-link">View Guide →</a>
               </div>
             </div>
           </div>
@@ -774,11 +811,11 @@
             </div>
 
             <div class="about-links">
-              <a href="docs/project-overview.md" target="_blank" class="btn-primary">
+              <a href="docs/project-overview.md" target="_blank" rel="noopener noreferrer" class="btn-primary">
                 <span>Read Full Project Overview</span>
                 <span aria-hidden="true">→</span>
               </a>
-              <a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener" class="btn-secondary">
+              <a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                 <span>Learn about UN SDG 4</span>
               </a>
             </div>
@@ -791,8 +828,8 @@
 
   </main>
 
-  <!-- Floating Assistant Trigger (Fixed Corner Button) -->
-  <button class="floating-assistant-trigger" id="floatingAssistantTrigger" data-trigger="chatbot-modal" aria-label="Open CampusConnect AI Assistant">
+  <!-- Floating Assistant Trigger (Fallback Only, Hidden by Default to Prevent Duplicate Widgets) -->
+  <button class="floating-assistant-trigger" id="floatingAssistantTrigger" data-trigger="chatbot-modal" aria-label="Open CampusConnect AI Assistant" style="display: none;">
     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
     </svg>
@@ -838,7 +875,7 @@
             <li><span class="check">✓</span> Semantic HTML5 & Modern CSS3 Portal Ready</li>
             <li><span class="check">✓</span> Knowledge Base Files Staged in <code>/knowledge-base</code></li>
             <li><span class="check">✓</span> Botpress Webchat Injection Hook Configured</li>
-            <li><span class="pending">⏳</span> Next Step: Provide Botpress Bot ID in <code>botpress/botpress-config-template.json</code></li>
+            <li><span class="check">✓</span> Botpress Cloud Agent Published & Live</li>
           </ul>
         </div>
 
@@ -846,7 +883,7 @@
 
       <div class="modal-footer">
         <button class="btn-secondary" id="modalCloseActionBtn">Close</button>
-        <a href="botpress/README.md" target="_blank" class="btn-primary">
+        <a href="botpress/README.md" target="_blank" rel="noopener noreferrer" class="btn-primary">
           <span>Botpress Setup Guide</span>
           <span aria-hidden="true">→</span>
         </a>
@@ -894,11 +931,11 @@
         <div class="footer-col">
           <h4 class="footer-heading">Documentation</h4>
           <ul class="footer-nav-list">
-            <li><a href="docs/project-overview.md" target="_blank">Project Overview</a></li>
-            <li><a href="docs/requirements-specification.md" target="_blank">Requirements Specification</a></li>
-            <li><a href="docs/development-roadmap.md" target="_blank">Development Roadmap</a></li>
-            <li><a href="botpress/README.md" target="_blank">Botpress Integration Guide</a></li>
-            <li><a href="knowledge-base/README.md" target="_blank">Knowledge Base Readme</a></li>
+            <li><a href="docs/project-overview.md" target="_blank" rel="noopener noreferrer">Project Overview</a></li>
+            <li><a href="docs/requirements-specification.md" target="_blank" rel="noopener noreferrer">Requirements Specification</a></li>
+            <li><a href="docs/development-roadmap.md" target="_blank" rel="noopener noreferrer">Development Roadmap</a></li>
+            <li><a href="botpress/README.md" target="_blank" rel="noopener noreferrer">Botpress Integration Guide</a></li>
+            <li><a href="knowledge-base/README.md" target="_blank" rel="noopener noreferrer">Knowledge Base Readme</a></li>
           </ul>
         </div>
 
@@ -906,10 +943,11 @@
         <div class="footer-col">
           <h4 class="footer-heading">Compliance</h4>
           <ul class="footer-nav-list">
-            <li><a href="LICENSE" target="_blank">MIT Open Source License</a></li>
-            <li><a href="knowledge-base/academic-policies.md" target="_blank">Academic Policies</a></li>
-            <li><a href="knowledge-base/library-and-learning-resources.md" target="_blank">Library Resources</a></li>
-            <li><a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener">United Nations SDG 4</a></li>
+            <li><a href="LICENSE" target="_blank" rel="noopener noreferrer">MIT Open Source License</a></li>
+            <li><a href="knowledge-base/campusconnect-student-guide.md" target="_blank" rel="noopener noreferrer">Student Learning Guide</a></li>
+            <li><a href="knowledge-base/academic-policies.md" target="_blank" rel="noopener noreferrer">Academic Policies</a></li>
+            <li><a href="knowledge-base/library-and-learning-resources.md" target="_blank" rel="noopener noreferrer">Library Resources</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener noreferrer">United Nations SDG 4</a></li>
           </ul>
         </div>
 
