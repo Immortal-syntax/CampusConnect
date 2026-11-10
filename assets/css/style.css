@@ -968,6 +968,67 @@ button:focus-visible {
   background: var(--bg-light);
 }
 
+/* Support Topic Search Form */
+.support-search-form {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.25rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.95rem 3rem 0.95rem 3.25rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--text-dark);
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px var(--primary-blue-glow);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 1.25rem;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.clear-search-btn:hover {
+  color: var(--text-dark);
+}
+
+.search-feedback {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

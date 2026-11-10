@@ -8,31 +8,31 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 
 ```
 +--------------------------------------------------------------------------+
-|  Phase 1: Project Foundation & Architecture (Current Phase)              |
+|  Phase 1: Project Foundation & Architecture (COMPLETED)                  |
 |  - Repository architecture, Git hygiene, foundational docs & design system|
 +--------------------------------------------------------------------------+
                                      |
                                      v
 +--------------------------------------------------------------------------+
-|  Phase 2: Modern Web Portal Implementation                               |
+|  Phase 2: Modern Web Portal Implementation (COMPLETED)                   |
 |  - Semantic HTML5, CSS3 Navy/Electric design, responsive interactions   |
 +--------------------------------------------------------------------------+
                                      |
                                      v
 +--------------------------------------------------------------------------+
-|  Phase 3: Knowledge Base & Botpress Cloud Configuration                  |
+|  Phase 3: Knowledge Base & Botpress Cloud Configuration (COMPLETED)      |
 |  - Institutional RAG document authoring, bot persona & workflow rules    |
 +--------------------------------------------------------------------------+
                                      |
                                      v
 +--------------------------------------------------------------------------+
-|  Phase 4: Botpress Webchat Integration & Event Binding                   |
+|  Phase 4: Botpress Webchat Integration & Event Binding (COMPLETED)       |
 |  - Script embed injection, custom styling alignment & launch triggers    |
 +--------------------------------------------------------------------------+
                                      |
                                      v
 +--------------------------------------------------------------------------+
-|  Phase 5: Quality Assurance, Verification & Deployment                   |
+|  Phase 5: Quality Assurance, Verification & Deployment (CURRENT)         |
 |  - WCAG audit, performance benchmarks, GitHub Pages deployment           |
 +--------------------------------------------------------------------------+
 ```
@@ -41,7 +41,7 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 
 ## Phase Details
 
-### Phase 1: Project Foundation & Architecture (CURRENT)
+### Phase 1: Project Foundation & Architecture (COMPLETED)
 - [x] Establish the clean repository directory tree:
   - `assets/` (`css/`, `js/`, `images/`)
   - `docs/`
@@ -57,7 +57,7 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
 - [x] Prepare foundational markup, stylesheet, and client script with Botpress integration hooks.
 - [x] Create comprehensive `README.md` baseline.
 
-### Phase 2: Modern Web Portal Implementation
+### Phase 2: Modern Web Portal Implementation (COMPLETED)
 - [x] Implement the Navy Blue, Electric Blue, and Crisp White aesthetic.
 - [x] Build semantic components:
   - Global Navigation with responsive mobile menu.
@@ -67,27 +67,33 @@ This document outlines the phased engineering milestones for **CampusConnect AI*
   - Botpress Architecture & Integration Preview section.
 - [x] Apply accessible typography, modern CSS grid/flexbox layouts, and smooth transition states.
 
-### Phase 3: Knowledge Base & Botpress Cloud Setup
-- [ ] Author standardized knowledge templates inside `knowledge-base/`:
+### Phase 3: Knowledge Base & Botpress Cloud Setup (COMPLETED)
+- [x] Author comprehensive knowledge base guides inside `knowledge-base/`:
+  - `campusconnect-student-guide.md` (10 core study and learning categories)
   - `academic-policies.md`
   - `library-and-learning-resources.md`
-  - `student-support-services.md`
+  - `student-services-and-campus-life.md`
   - `examination-and-grading-rules.md`
-  - `faq-repository.md`
-- [ ] Set up the Botpress Cloud workspace and create the student assistant bot.
-- [ ] Ingest the curated knowledge base into Botpress Cloud vector storage.
-- [ ] Configure generative AI prompt instructions (advising persona, boundaries, citation policies).
+- [x] Author Botpress Cloud configuration suite:
+  - `botpress/agent-instructions.md` (Autonomous Node prompt, anti-hallucination guardrails)
+  - `botpress/conversation-design.md` (8 conversational flow specifications)
+  - `botpress/test-cases.md` (28 structured evaluation test cases)
+  - `botpress/setup-guide.md` (Manual step-by-step Botpress setup guide)
 
-### Phase 4: Botpress Webchat Integration
-- [ ] Extract Botpress Webchat v2 embed credentials (Bot ID, Client ID, Host URL).
-- [ ] Securely link the Webchat script into `index.html` and `assets/js/script.js`.
-- [ ] Align Webchat colors with the university Navy and Electric Blue theme palette.
-- [ ] Test real-time message exchange and knowledge base retrieval via Botpress.
+### Phase 4: Botpress Webchat Integration (COMPLETED)
+- [x] Injected official Botpress Webchat v3.7 embed bundle:
+  - `https://cdn.botpress.cloud/webchat/v3.7/inject.js`
+  - `https://files.bpcontent.cloud/2026/11/10/16/20261110165048-XOMTS7I8.js`
+- [x] Wired CTA buttons ("Ask CampusConnect", "Ask AI") to `window.botpress.open()`.
+- [x] Connected interactive suggested question cards to `window.botpress.sendMessage(question)`.
+- [x] Enforced Webchat readiness event (`webchat:ready`) and queued messages.
+- [x] Prevented duplicate floating widgets by hiding custom button upon Botpress mount.
+- [x] Executed live API test sessions against hosted agent (`clientId: eacbce57-d261-419a-8f54-f8c85d2402a5`).
 
-### Phase 5: QA, Verification & Final Deployment
-- [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge).
-- [ ] Mobile and tablet viewport validation.
-- [ ] Accessibility review against WCAG 2.1 AA standards.
-- [ ] Deploy live site via GitHub Pages or chosen static web host.
-- [ ] Populate `screenshots/` directory with interface walkthrough visuals.
-
+### Phase 5: QA, Verification & Final Deployment (CURRENT)
+- [x] Verify HTTP 200 responses on all static assets without 404s.
+- [x] JavaScript syntax validation (`node -c assets/js/script.js` passing with 0 errors).
+- [x] Accessibility audit against WCAG 2.1 AA standards (contrast, focus outlines, ARIA attributes).
+- [x] Multi-viewport layout testing (Desktop 1920px/1280px, Tablet 768px, Mobile 360px–480px).
+- [ ] Create GitHub Pages deployment instructions in documentation.
+- [ ] Final project summary and submission report.
