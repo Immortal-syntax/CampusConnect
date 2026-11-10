@@ -2,7 +2,7 @@
  * ==============================================================================
  * CampusConnect AI - Master Client JavaScript Engine
  * Technologies: Pure Vanilla JavaScript (ES6+)
- * Objective: Navigation, Accessibility, Interactive Inquiries & Botpress Hooks
+ * Objective: Navigation, Accessibility, Interactive Inquiries & Official Botpress Webchat
  * ==============================================================================
  */
 
@@ -10,9 +10,159 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   console.log('[CampusConnect AI] Client portal engine initialized.');
-  console.log('[CampusConnect AI] Botpress Webchat integration hook: window.initBotpressWebchat(config).');
 
-  // --- 1. Mobile Navigation Drawer & Hamburger ---
+  // --- 1. Botpress Webchat Integration State & Event Binding ---
+  let isWebchatReady = false;
+  let pendingQuestion = null;
+
+  /**
+   * Called when Botpress Webchat fires the 'webchat:ready' event.
+   */
+  function handleBotpressReady() {
+    if (isWebchatReady) return;
+    isWebchatReady = true;
+    console.log('[CampusConnect AI] Official Botpress Webchat is connected and ready.');
+
+    // Update announcement bar indicator
+    const connectionIndicator = document.getElementById('botpressConnectionIndicator');
+    if (connectionIndicator) {
+      connectionIndicator.textContent = 'Botpress Cloud: Connected (Live Assistant)';
+    }
+
+    // Update pulse dots to ready (green)
+    const pulseDots = document.querySelectorAll('.pulse-dot');
+    pulseDots.forEach((dot) => {
+      dot.classList.remove('standby');
+      dot.classList.add('ready');
+    });
+
+    // Update chatbot section status pill
+    const statusPill = document.getElementById('chatbotStatusPill');
+    if (statusPill) {
+      statusPill.classList.remove('standby');
+      statusPill.classList.add('ready');
+      statusPill.innerHTML = '<span class="status-indicator-dot ready"></span><span><strong>Status:</strong> Botpress Webchat Connected & Live</span>';
+    }
+
+    // Hide custom floating button to prevent duplicate chatbot widgets
+    const floatingBtn = document.getElementById('floatingAssistantTrigger');
+    if (floatingBtn) {
+      floatingBtn.style.display = 'none';
+    }
+
+    // If user clicked a suggested question while loading, dispatch it now
+    if (pendingQuestion) {
+      const queuedQuestion = pendingQuestion;
+      pendingQuestion = null;
+      console.log(`[CampusConnect AI] Dispatching queued question to Webchat: "${queuedQuestion}"`);
+      dispatchMessageToBotpress(queuedQuestion);
+    }
+  }
+
+  /**
+   * Dispatches a message to Botpress Webchat using official methods.
+   * Ensures the Webchat is opened first, then delivers the message.
+   * 
+   * @param {string} message - Message text to send
+   */
+  function dispatchMessageToBotpress(message) {
+    if (!message) return;
+
+    if (window.botpress && typeof window.botpress.open === 'function') {
+      try {
+        // Open the Webchat window
+        window.botpress.open();
+
+        // If Webchat is fully ready, send the message using official sendMessage
+        if (isWebchatReady && typeof window.botpress.sendMessage === 'function') {
+          console.log(`[CampusConnect AI] Calling window.botpress.sendMessage("${message}")`);
+          window.botpress.sendMessage(message);
+        } else {
+          // If open but not yet fully ready, queue for the readiness event
+          pendingQuestion = message;
+        }
+      } catch (err) {
+        console.error('[CampusConnect AI] Error interacting with Botpress Webchat:', err);
+        openFallbackModal(message);
+      }
+    } else {
+      console.warn('[CampusConnect AI] Botpress Webchat not available. Opening fallback dialog.');
+      openFallbackModal(message);
+    }
+  }
+
+  /**
+   * Opens the Botpress Webchat interface.
+   */
+  function openBotpressChat() {
+    if (window.botpress && typeof window.botpress.open === 'function') {
+      try {
+        console.log('[CampusConnect AI] Calling window.botpress.open()');
+        window.botpress.open();
+      } catch (err) {
+        console.error('[CampusConnect AI] Error calling window.botpress.open():', err);
+        openFallbackModal();
+      }
+    } else {
+      console.warn('[CampusConnect AI] Botpress Webchat not initialized yet.');
+      openFallbackModal();
+    }
+  }
+
+  /**
+   * Initializes listeners on window.botpress once available.
+   */
+  function initBotpressListeners() {
+    if (window.botpress && typeof window.botpress.on === 'function') {
+      try {
+        window.botpress.on('webchat:ready', () => {
+          handleBotpressReady();
+        });
+
+        window.botpress.on('webchat:opened', () => {
+          console.log('[CampusConnect AI] Botpress Webchat opened by user.');
+        });
+
+        window.botpress.on('webchat:closed', () => {
+          console.log('[CampusConnect AI] Botpress Webchat closed by user.');
+        });
+
+        // If already loaded before listener attachment
+        if (window.botpress.isLoaded) {
+          handleBotpressReady();
+        }
+      } catch (e) {
+        console.warn('[CampusConnect AI] Could not attach Botpress event listener:', e);
+      }
+    } else {
+      // Poll every 100ms up to 10 seconds for delayed script loading
+      let attempts = 0;
+      const pollInterval = setInterval(() => {
+        attempts++;
+        if (window.botpress && typeof window.botpress.on === 'function') {
+          clearInterval(pollInterval);
+          try {
+            window.botpress.on('webchat:ready', () => {
+              handleBotpressReady();
+            });
+            if (window.botpress.isLoaded) {
+              handleBotpressReady();
+            }
+          } catch (e) {
+            console.warn('[CampusConnect AI] Botpress listener error during polling:', e);
+          }
+        } else if (attempts >= 100) { // 10 seconds
+          clearInterval(pollInterval);
+          console.warn('[CampusConnect AI] Botpress Webchat script load timeout or network offline.');
+        }
+      }, 100);
+    }
+  }
+
+  // Start listener setup
+  initBotpressListeners();
+
+  // --- 2. Mobile Navigation Drawer & Hamburger ---
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -43,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. Active Navigation Spy (Scroll Observer) ---
+  // --- 3. Active Navigation Spy (Scroll Observer) ---
   const sections = document.querySelectorAll('main > section[id]');
 
   if ('IntersectionObserver' in window && sections.length > 0) {
@@ -72,27 +222,24 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
-  // --- 3. Assistant Modal Management ---
+  // --- 4. Fallback Modal Dialog Management ---
   const assistantModal = document.getElementById('assistantModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalCloseActionBtn = document.getElementById('modalCloseActionBtn');
   const selectedQueryBox = document.getElementById('selectedQueryBox');
   const selectedQueryText = document.getElementById('selectedQueryText');
-  const openModalTriggers = document.querySelectorAll('[data-trigger="chatbot-modal"]');
 
   /**
-   * Opens the assistant status modal.
-   * Optionally populates a selected user question.
+   * Opens the fallback dialog if Botpress Webchat is unavailable.
    * 
    * @param {string} [question] - Optional question string selected by the user
    */
-  function openAssistantModal(question = '') {
+  function openFallbackModal(question = '') {
     if (!assistantModal) return;
 
     if (question && selectedQueryBox && selectedQueryText) {
       selectedQueryText.textContent = `"${question}"`;
       selectedQueryBox.style.display = 'block';
-      console.log(`[CampusConnect AI] Question primed for Botpress: "${question}"`);
     } else if (selectedQueryBox) {
       selectedQueryBox.style.display = 'none';
     }
@@ -101,16 +248,15 @@ document.addEventListener('DOMContentLoaded', () => {
     assistantModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    // Focus close button for accessibility
     if (modalCloseBtn) {
       modalCloseBtn.focus();
     }
   }
 
   /**
-   * Closes the assistant status modal.
+   * Closes the fallback dialog.
    */
-  function closeAssistantModal() {
+  function closeFallbackModal() {
     if (!assistantModal) return;
 
     assistantModal.classList.remove('active');
@@ -118,131 +264,87 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Bind trigger buttons (Hero, Nav, Floating button, Showcase button)
-  openModalTriggers.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openAssistantModal();
-    });
-  });
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeFallbackModal);
+  if (modalCloseActionBtn) modalCloseActionBtn.addEventListener('click', closeFallbackModal);
 
-  // Bind modal close buttons
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeAssistantModal);
-  if (modalCloseActionBtn) modalCloseActionBtn.addEventListener('click', closeAssistantModal);
-
-  // Close on backdrop click
   if (assistantModal) {
     assistantModal.addEventListener('click', (e) => {
       if (e.target === assistantModal) {
-        closeAssistantModal();
+        closeFallbackModal();
       }
     });
   }
 
-  // Close on Escape key press
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && assistantModal && assistantModal.classList.contains('active')) {
-      closeAssistantModal();
+      closeFallbackModal();
     }
   });
 
-  // --- 4. Interactive Suggested Question Cards ---
+  // --- 5. Connecting CTA Buttons to Official Botpress Webchat ---
+  // Elements: "Ask AI" in nav, "Ask CampusConnect" in hero, "Open AI Chatbot" in section 4, preview CTA
+  const askButtons = document.querySelectorAll('#navAskAiBtn, #heroAskBtn, #mainOpenChatbotBtn, .preview-cta-btn, #floatingAssistantTrigger');
+
+  askButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // If Webchat is ready or available, open it directly using official method
+      if (window.botpress && typeof window.botpress.open === 'function') {
+        openBotpressChat();
+      } else {
+        // Fallback if script is blocked or still loading
+        openFallbackModal();
+      }
+    });
+  });
+
+  // --- 6. Connecting Suggested Question Cards to Official Botpress Webchat ---
   const questionCards = document.querySelectorAll('.question-card');
   const categoryQuestionButtons = document.querySelectorAll('[data-question]');
 
-  /**
-   * Dispatches inquiry to Botpress or opens status modal if Botpress is pending.
-   * 
-   * @param {string} question - Question query string
-   */
-  function handleQuestionInquiry(question) {
+  function handleQuestionClick(question) {
     if (!question) return;
 
-    // Check if Botpress Webchat is actively connected
-    if (window.botpress && typeof window.botpress.sendEvent === 'function') {
-      console.log('[CampusConnect AI] Dispatching message to connected Botpress instance:', question);
-      window.botpress.sendEvent({
-        type: 'message',
-        text: question
-      });
-      if (typeof window.botpress.open === 'function') {
-        window.botpress.open();
-      }
-      return;
-    }
+    console.log(`[CampusConnect AI] User selected suggested question: "${question}"`);
 
-    // Botpress is in Standby mode -> Show modal with question displayed
-    openAssistantModal(question);
+    if (window.botpress && typeof window.botpress.open === 'function') {
+      dispatchMessageToBotpress(question);
+    } else {
+      openFallbackModal(question);
+    }
   }
 
   questionCards.forEach((card) => {
     card.addEventListener('click', () => {
       const question = card.getAttribute('data-question') || card.querySelector('.question-text')?.textContent.replace(/[""]/g, '');
-      handleQuestionInquiry(question);
+      handleQuestionClick(question);
     });
 
-    // Make question cards keyboard accessible
+    // Keyboard accessibility
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const question = card.getAttribute('data-question') || card.querySelector('.question-text')?.textContent.replace(/[""]/g, '');
-        handleQuestionInquiry(question);
+        handleQuestionClick(question);
       }
     });
   });
 
   categoryQuestionButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const question = btn.getAttribute('data-question');
-      handleQuestionInquiry(question);
+      handleQuestionClick(question);
     });
   });
 
-  // --- 5. Clean Integration Hook for Botpress Cloud Webchat ---
-  /**
-   * Initializes the official Botpress Cloud Webchat v2 embed.
-   * Call this function when actual botId and clientId are supplied.
-   * 
-   * @param {Object} config - Configuration object containing botId, clientId, etc.
-   */
+  // --- 7. Backward Compatibility / Global Helper Hook ---
   window.initBotpressWebchat = function (config) {
-    if (!config || !config.botId) {
-      console.warn('[CampusConnect AI] Botpress Webchat configuration missing botId. Bot remains in Standby mode.');
-      return;
+    console.log('[CampusConnect AI] initBotpressWebchat hook called. Webchat bundle is embedded in index.html.');
+    if (window.botpress && typeof window.botpress.open === 'function') {
+      window.botpress.open();
     }
-
-    console.log('[CampusConnect AI] Connecting live Botpress Cloud Webchat:', config.botId);
-
-    // Update connection indicator in UI
-    const connectionIndicator = document.getElementById('botpressConnectionIndicator');
-    const pulseDot = document.querySelector('.pulse-dot');
-    if (connectionIndicator) {
-      connectionIndicator.textContent = 'Botpress Cloud: Connected (Live Assistant)';
-    }
-    if (pulseDot) {
-      pulseDot.classList.remove('standby');
-      pulseDot.classList.add('ready');
-    }
-
-    // Inject official Botpress Webchat script bundle
-    const injectScript = document.createElement('script');
-    injectScript.src = 'https://cdn.botpress.cloud/webchat/v2/inject.js';
-    injectScript.async = true;
-    injectScript.onload = () => {
-      console.log('[CampusConnect AI] Botpress Webchat bundle loaded.');
-      if (window.botpress) {
-        window.botpress.init({
-          botId: config.botId,
-          clientId: config.clientId || config.botId,
-          hostUrl: config.hostUrl || 'https://cdn.botpress.cloud/webchat/v2',
-          messagingUrl: config.messagingUrl || 'https://messaging.botpress.cloud',
-          botName: config.botName || 'CampusConnect AI',
-          botDescription: 'Generative AI Student Assistance Chatbot'
-        });
-      }
-    };
-    document.body.appendChild(injectScript);
   };
 });
