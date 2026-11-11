@@ -59,6 +59,10 @@ yarn-error.log*
 *.tmp
 *.temp
 .cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
 
 # Build & Dependency Outputs (if build tools or packages are tested locally)
 node_modules/

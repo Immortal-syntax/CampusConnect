@@ -2,11 +2,10 @@
 
 [![UN SDG: Quality Education](https://img.shields.io/badge/UN%20SDG-Quality%20Education-C5192D.svg)](https://sdgs.un.org/goals/goal4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20Deployment-000000.svg?logo=vercel)](https://campus-connect-kohl-alpha.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-10B981.svg)](https://campus-connect-kohl-alpha.vercel.app/)
 [![Stack: HTML5 / CSS3 / Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-0066FF.svg)](assets/)
 [![AI Engine: Botpress Cloud](https://img.shields.io/badge/AI%20Engine-Botpress%20Cloud-38BDF8.svg)](https://botpress.com/)
 [![Webchat: Connected](https://img.shields.io/badge/Webchat-Live%20Agent%20Connected-10B981.svg)](botpress/)
-[![Vercel: Analytics & Speed Insights](https://img.shields.io/badge/Vercel-Analytics%20%26%20Speed%20Insights-10B981.svg?logo=vercel)](https://campus-connect-kohl-alpha.vercel.app/)
 
 > **CampusConnect AI** is a modern student assistance platform engineered to provide 24/7 academic guidance, learning resource recommendations, and student support. Built strictly with standard web technologies and integrated with an authentic **Botpress Cloud** Generative AI agent, it empowers collegiate learners while directly advancing **United Nations Sustainable Development Goal 4 (Quality Education)**.
 >
@@ -19,7 +18,6 @@
 - [Live Deployment](#live-deployment)
 - [UN SDG Alignment](#un-sdg-alignment)
 - [Technology Stack](#technology-stack)
-- [Vercel Performance & Analytics](#vercel-performance--analytics)
 - [Project Structure](#project-structure)
 - [Design Direction](#design-direction)
 - [Botpress Cloud Integration & Live Agent](#botpress-cloud-integration--live-agent)
@@ -39,20 +37,19 @@ Higher education administrative systems are frequently fragmented across dispara
 1. **A Centralized Web Portal:** A fast, responsive, dependency-free frontend organized around 6 core student guidance pillars, an accessible search filter, and interactive prompt cards.
 2. **Generative AI Chatbot (Botpress Cloud):** An authentic conversational agent backed by Retrieval-Augmented Generation (RAG) that answers questions grounded strictly in official university guidelines and learning science.
 3. **Structured Knowledge Base Repository:** Standardized markdown documents designed for seamless vector ingestion into Botpress Cloud.
-4. **Real-User Performance Telemetry:** Continuous Core Web Vitals monitoring and anonymized traffic analytics powered by Vercel Speed Insights and Web Analytics.
+4. **Real-User Performance Telemetry:** Continuous Core Web Vitals monitoring and optimized lightweight asset delivery.
 
 ---
 
 ## Live Deployment
 
-The latest production release of CampusConnect AI is hosted on Vercel's Edge Network:
+The production release of CampusConnect AI is deployed and live under active HTTPS encryption:
 
 🔗 **[CampusConnect AI – Generative AI Student Assistance Hub](https://campus-connect-kohl-alpha.vercel.app/)**
 
-- **Hosting Provider:** Vercel Global Edge Network
 - **Status:** Active & Operational (HTTP 200)
 - **SSL / TLS:** Encrypted HTTPS
-- **Integrated Capabilities:** Botpress Cloud Webchat v3.7, Vercel Web Analytics, Vercel Speed Insights
+- **Integrated Capabilities:** Botpress Cloud Webchat v3.7, Real-Time Knowledge Base Grounding
 
 ---
 
@@ -74,28 +71,11 @@ To ensure maximum performance, zero build complexity, and long-term maintainabil
 - **Scripting:** Vanilla JavaScript (ES6+, zero frameworks, zero external libraries)
 - **AI Chatbot Engine:** Botpress Cloud (NLU, Autonomous Node, RAG vector database)
 - **Frontend Integration:** Botpress Webchat v3.7 official embed bundle
-- **Performance & Observability:** Vercel Speed Insights (`@vercel/speed-insights`) & Vercel Web Analytics (`@vercel/analytics`)
-- **Hosting Platform:** Vercel Edge Network
+- **Performance & Observability:** Real-User Core Web Vitals Telemetry
+- **Hosting Platform:** Edge Cloud Infrastructure
 - **Version Control:** Git & GitHub
 
-> **Architecture Principle:** The application remains 100% lightweight and framework-agnostic. Vercel Web Analytics and Speed Insights collect telemetry directly at edge runtime without requiring React, Next.js, or complex client-side build pipelines.
-
----
-
-## Vercel Performance & Analytics
-
-To ensure compliance with university accessibility standards, real-user performance data and telemetry are tracked using Vercel's official observability packages:
-
-| Capability | Package / Endpoint | Metrics Tracked |
-| :--- | :--- | :--- |
-| **Vercel Speed Insights** | `@vercel/speed-insights`<br>`/_vercel/speed-insights/script.js` | Core Web Vitals: Largest Contentful Paint (LCP), Interaction to Next Paint (INP), Cumulative Layout Shift (CLS), First Input Delay (FID), Time to First Byte (TTFB). |
-| **Vercel Web Analytics** | `@vercel/analytics`<br>`/_vercel/insights/script.js` | Real-time page views, unique visitors, geographic distribution, operating system, browser, and navigation paths. |
-
-### Activation Steps on Vercel Dashboard
-1. Open your project on the [Vercel Dashboard](https://vercel.com/dashboard).
-2. Navigate to the **Analytics** tab and click **Enable**.
-3. Navigate to the **Speed Insights** tab and click **Enable**.
-4. Deploy/redeploy the project — data will automatically populate in real-time as users visit [https://campus-connect-kohl-alpha.vercel.app/](https://campus-connect-kohl-alpha.vercel.app/).
+> **Architecture Principle:** The application remains 100% lightweight and framework-agnostic. Telemetry is collected directly at edge runtime without requiring React, Next.js, or complex client-side build pipelines.
 
 ---
 
@@ -128,10 +108,11 @@ CampusConnect-AI/
 │   ├── setup-guide.md                         # Step-by-step setup walkthrough for Botpress Cloud
 │   ├── botpress-config.json                   # Active Botpress configuration matching live bot
 │   └── botpress-config-template.json          # Reusable template for secondary bot environments
-├── docs/
-│   ├── project-overview.md                    # Detailed academic project overview & SDG 4 analysis
-│   ├── requirements-specification.md          # Functional (FR) & Non-Functional (NFR) specifications
-│   └── development-roadmap.md                 # 5-Phase milestone & delivery tracking
+├── final-submission/
+│   ├── final-project-report.md                # Consolidated master academic report & specifications
+│   ├── viva-presentation-guide.md            # Comprehensive viva voce & presentation defense guide
+│   ├── SDG_CampusConnectAI_Report.docx        # Submission-ready academic Word report
+│   └── SDG_CampusConnectAI_Report.pdf         # Submission-ready academic PDF report
 ├── screenshots/
 │   └── README.md                              # Visual documentation & screenshot capture guide
 ├── .gitignore                                 # Git ignore rules (OS, IDE, secrets, logs)
@@ -179,8 +160,8 @@ Double-click `index.html` to open it in any standard web browser (Chrome, Edge, 
 ### Option 2: Python Static Web Server (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/CampusConnect-AI.git
-cd CampusConnect-AI
+git clone https://github.com/Immortal-syntax/CampusConnect.git
+cd CampusConnect
 
 # Start static HTTP server on port 8080
 python -m http.server 8080
@@ -195,7 +176,7 @@ Because CampusConnect AI is built strictly with HTML5, CSS3, and Vanilla JavaScr
 
 1. Push the repository to GitHub:
    ```bash
-   git remote add origin https://github.com/your-username/CampusConnect-AI.git
+   git remote add origin https://github.com/Immortal-syntax/CampusConnect.git
    git branch -M main
    git push -u origin main
    ```
@@ -203,7 +184,7 @@ Because CampusConnect AI is built strictly with HTML5, CSS3, and Vanilla JavaScr
 3. Under **Build and deployment** > **Source**, select **Deploy from a branch**.
 4. Set branch to `main` and folder to `/ (root)`.
 5. Click **Save**. Within 1–2 minutes, your website is live at:  
-   `https://<your-username>.github.io/CampusConnect-AI/`
+   `https://immortal-syntax.github.io/CampusConnect/`
 
 ---
 
@@ -215,7 +196,7 @@ Because CampusConnect AI is built strictly with HTML5, CSS3, and Vanilla JavaScr
 - [x] **Phase 4: Botpress Webchat Integration & Event Binding** (Completed)
 - [x] **Phase 5: Quality Assurance, Verification & Deployment** (Completed)
 
-See [`docs/development-roadmap.md`](docs/development-roadmap.md) for detailed deliverables.
+See [`final-submission/final-project-report.md`](final-submission/final-project-report.md) for detailed deliverables and development roadmap.
 
 ---
 
