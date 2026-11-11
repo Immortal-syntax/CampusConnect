@@ -129,7 +129,7 @@ Higher education administrative systems are frequently fragmented across dispara
 | **Markup** | HTML5 (Strict Semantic Validation) | Verified (W3C Validator Clean) |
 | **Styles** | Native CSS3 (CSS Variables, Flexbox, Grid, Media Queries) | Verified (Zero Framework Overhead) |
 | **Scripting** | Vanilla JavaScript (ES6+, zero runtime dependencies) | Verified (Zero NPM Client Dependencies) |
-| **AI Integration** | Botpress Cloud (Autonomous Node, NLU, RAG Vector Store) | Verified (Live Bot ID `YOUR_BOTPRESS_BOT_ID...`) |
+| **AI Integration** | Botpress Cloud (Autonomous Node, NLU, RAG Vector Store) | Verified (Botpress Cloud Integration) |
 | **Webchat Interface** | Botpress Webchat v3.7 Official Bundle | Verified (Slide-over drawer, typing indicators) |
 | **Telemetry** | `@vercel/speed-insights` & `@vercel/analytics` | Verified (Edge performance tracking) |
 | **Version Control** | Git with Conventional Commit Standards | Verified ([GitHub Repository](https://github.com/Immortal-syntax/CampusConnect)) |
@@ -231,10 +231,8 @@ The core philosophy rests upon three pillars:
 7. **Delivery:** The verified response is delivered back to the student's Webchat window in real time.
 
 ### 5.3 Botpress Webchat v3.7 Client Integration Architecture
-- **Injection Scripts:** The HTML template embeds the official Webchat injector (`inject.js`) and the compiled agent configuration script (`bot-config.js`) with the `defer` attribute.
-- **Client Configuration:**
-  - **Bot ID:** `YOUR_BOTPRESS_BOT_ID`
-  - **Client ID:** `YOUR_BOTPRESS_CLIENT_ID`
+- **Injection Scripts:** The HTML template embeds the official Webchat injector (`inject.js`) and the agent configuration script with the `defer` attribute.
+- **Client Configuration:** Managed via standard Botpress Webchat client configuration.
 - **Asynchronous Synchronization:** The master client engine (`assets/js/script.js`) monitors the `webchat:ready`, `webchat:opened`, and `webchat:closed` lifecycle events, updates visual status indicators dynamically, and queues outgoing messages to prevent race conditions during initial script loading.
 - **Aesthetic Customization:** Configured with a dedicated brand avatar, custom title, and an Electric Blue primary theme (`#3276EA`) matching the portal's academic palette.
 
@@ -258,7 +256,7 @@ At the core of the cloud intelligence is a Botpress Cloud Autonomous Node config
                                              v
 +-----------------------------------------------------------------------------------------+
 |                                BOTPRESS WEBCHAT v3.7 EMBED                              |
-|  - inject.js + bot-config.js                                               |
+|  - inject.js + Webchat Client Configuration                                             |
 |  - Window Event Binding: window.botpress.open() / window.botpress.sendMessage()         |
 |  - Readiness Synchronization: 'webchat:ready' event listener with message queuing       |
 +--------------------------------------------+--------------------------------------------+

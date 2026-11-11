@@ -8,18 +8,16 @@ The frontend portal embeds the official **Botpress Webchat v3.7** library connec
 
 ---
 
-## Active Webchat Embed Configuration
+## Webchat Embed Configuration
 
-The live bot is integrated directly into `index.html` using the official Botpress embed snippet:
+To integrate your Botpress bot into `index.html`, use the official Botpress embed snippet:
 
 ```html
 <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/11/10/16/bot-config.js" defer></script>
+<script src="https://files.bpcontent.cloud/YOUR_ACCOUNT_ID/YOUR_BOT_CONFIG.js" defer></script>
 ```
 
-- **Bot ID:** `YOUR_BOTPRESS_BOT_ID`
-- **Client ID:** `YOUR_BOTPRESS_CLIENT_ID`
-- **Active Config File:** [`botpress-config.json`](botpress-config.json)
+Refer to [`botpress-config-template.json`](botpress-config-template.json) for configuration parameters.
 
 ---
 

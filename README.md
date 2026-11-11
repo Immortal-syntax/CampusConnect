@@ -132,18 +132,12 @@ CampusConnect AI incorporates a **modern university technology aesthetic**:
 
 ---
 
-## Botpress Cloud Integration & Live Agent
+## Botpress Cloud Integration & Architecture
 
-The platform is integrated with an authentic **Botpress Cloud** AI agent:
+CampusConnect AI integrates with **Botpress Cloud** as its conversational Generative AI engine. Botpress handles Natural Language Understanding (NLU), Large Language Model (LLM) orchestration, and Knowledge Base vector retrieval (RAG).
 
-### Active Embed Code (`index.html`)
-```html
-<script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/11/10/16/bot-config.js" defer></script>
-```
-- **Bot ID:** `YOUR_BOTPRESS_BOT_ID`
-- **Client ID:** `YOUR_BOTPRESS_CLIENT_ID`
-- **Active Configuration File:** [`botpress/botpress-config.json`](botpress/botpress-config.json)
+### Setup & Integration
+Refer to [`botpress/README.md`](botpress/README.md) and [`botpress/botpress-config-template.json`](botpress/botpress-config-template.json) to configure your own Botpress bot credentials.
 
 ### JavaScript Interaction Model
 - **Opening the Assistant:** All "Ask CampusConnect" and "Ask AI" buttons invoke `window.botpress.open()`.
