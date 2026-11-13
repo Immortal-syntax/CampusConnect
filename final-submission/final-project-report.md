@@ -601,8 +601,6 @@ CampusConnect-AI/
 │   ├── viva-presentation-guide.md            # Comprehensive Viva Voce & 10-Slide Deck Defense Guide
 │   ├── SDG_CampusConnectAI_Report.docx        # Academic Word Evaluation Report
 │   └── SDG_CampusConnectAI_Report.pdf         # Academic PDF Evaluation Report
-├── screenshots/
-│   └── README.md                              # Visual documentation guidelines
 ├── .gitignore                                 # Git ignore rules
 ├── LICENSE                                    # MIT Open Source License
 └── README.md                                  # Primary repository overview

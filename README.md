@@ -113,8 +113,6 @@ CampusConnect-AI/
 │   ├── viva-presentation-guide.md            # Comprehensive viva voce & presentation defense guide
 │   ├── SDG_CampusConnectAI_Report.docx        # Submission-ready academic Word report
 │   └── SDG_CampusConnectAI_Report.pdf         # Submission-ready academic PDF report
-├── screenshots/
-│   └── README.md                              # Visual documentation & screenshot capture guide
 ├── .gitignore                                 # Git ignore rules (OS, IDE, secrets, logs)
 ├── LICENSE                                    # MIT Open Source License
 └── README.md                                  # Primary project documentation
